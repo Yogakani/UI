@@ -1,0 +1,40 @@
+<div class = "container">
+  <div class = "tle">
+      <h3>Account Verification</h3>
+  </div>
+  <div class = "emailContainer">
+    <div *ngIf = "!isEmailVerified">
+        <div class = "verificationContainer">
+            <h5>{{verMsg}}</h5>
+        </div>
+        <div *ngIf="!isMailSent">
+            <h6> Your Email: {{email}} </h6>
+            <div *ngIf="!isVerifyEmail">
+                <div class="emailBtnCont">
+                    <button id="emailBtn" type="submit" class="btn btn-primary" (click) = "verifyEmail()">Verify your Email</button>
+                </div>
+            </div>
+            <div *ngIf="isVerifyEmail">
+                <div class="emailBtnCont">
+                    <button class="btn btn-primary" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Verifying...
+                      </button>   
+                </div>
+            </div>     
+        </div>
+         <div *ngIf="isMailSent">
+           <h6>{{mailSentDes}}</h6>  
+         </div> 
+      </div>
+      <div *ngIf = "isEmailVerified">
+          <h5>{{verifiedEmail}}</h5>
+          <div class ="successIcon">
+              <i class="fas fa-check-circle fa-7x"></i>
+          </div>
+          <div class = "loginContainer log">
+            <button id="logBtn" type="submit" class="btn btn-primary" (click) = "onLogin()">Proceed to Login</button>
+        </div>
+        </div>
+      </div>    
+</div>

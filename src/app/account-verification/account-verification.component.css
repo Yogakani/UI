@@ -1,0 +1,48 @@
+.tle{
+    padding-top: 10px;
+}
+
+.verificationContainer{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.emailContainer{
+    padding-top: 20px;
+    position: relative;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.emailBtnCont{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mobileContainer{
+    padding-top: 70px;
+    padding-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.mobileBtnContainer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.successIcon{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: green;
+}
+
+.otpText{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.log{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}

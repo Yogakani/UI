@@ -1,0 +1,37 @@
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="form-vertical">
+    <div class = "container col-md-6 col-xs-6">
+            <div class="panel panel-default">
+                    <div class="panel-head title">
+                      <h3>Login</h3>
+                    </div><br>
+                    <div class="panel-body">
+                        <div *ngIf="failureMsg">
+                            <span style="color:red">{{failureDes}}</span>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <input formControlName="userName" type="text" id="name" placeholder=" User Name ">
+                            </div>
+                            <span *ngIf="submitted && loginForm.get('userName').errors?.required" style="color:red">
+                              {{userNameReqDes}}
+                            </span>    
+                        </div>
+                        <div class="form-group">
+                          <div>
+                              <input formControlName="password" type="password" id="password" placeholder=" Password ">
+                          </div>
+                          <div *ngIf="submitted && loginForm.get('password').errors?.required">
+                              <span style="color:red">{{pwdReqDes}}</span>
+                          </div> 
+                      </div>
+                    </div>
+                    <div>
+                      {{signupMsg}} <a routerLink = "/signup">Click here</a> to signup   
+                    </div>
+                    <div class="panel-footer logbtn">
+                        <button id="loginBtn" class="btn btn-primary" type="submit">Login</button>
+                    </div>
+            </div>
+    </div>  
+  </form>  
+

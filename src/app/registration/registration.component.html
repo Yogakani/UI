@@ -1,0 +1,77 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onRegistration()" class="form-horizontal">
+  <div class = "container col-md-6 col-xs-6">
+          <div class="panel panel-default">
+                  <div class="panel-head title">
+                    <h3>Registration</h3>
+                  </div><br>
+                  <div class="panel-body">
+                      <div *ngIf="failureMsg">
+                          <span style="color:red">{{failureDes}}</span>
+                      </div>
+                      <div class="form-group">
+                          <div>
+                              <input formControlName="userName" type="text" id="userName" placeholder=" User Name ">
+                          </div>
+                          <span *ngIf="submitted && registrationForm.get('userName').errors?.required" style="color:red">
+                            {{userNameReqDes}}
+                          </span>    
+                      </div>
+                      <div class="form-group">
+                        <div>
+                            <input formControlName="email" type="text" id="email" placeholder=" Email ">
+                        </div>
+                        <span *ngIf="submitted && registrationForm.get('userName').errors?.required" style="color:red">
+                          {{emailReqDes}}
+                        </span>    
+                    </div>
+                      <div class="form-group">
+                        <div>
+                            <input formControlName="password" type="password" id="password" placeholder=" Password ">
+                        </div>
+                        <div *ngIf="submitted && registrationForm.get('password').errors?.required">
+                            <span style="color:red">{{pwdReqDes}}</span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                          <div>
+                              <input formControlName="mobile" type="number" id="mobile" placeholder=" Mobile ">
+                          </div>
+                          <div *ngIf="submitted && registrationForm.get('mobile').errors?.required">
+                              <span style="color:red">{{mobilReqDes}}</span>
+                          </div>
+                      </div> 
+                      <div class="form-group">
+                          <div>
+                              <input formControlName="address" type="text" id="address" placeholder=" Address ">
+                          </div>
+                          <div *ngIf="submitted && registrationForm.get('address').errors?.required">
+                              <span style="color:red">{{addressReqDes}}</span>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <div>
+                            <input formControlName="city" type="text" id="city" placeholder=" City ">
+                        </div>
+                        <div *ngIf="submitted && registrationForm.get('city').errors?.required">
+                            <span style="color:red">{{cityReqDes}}</span>
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <div>
+                            <input formControlName="postalCode" type="number" id="postalCode" placeholder=" Postal Code ">
+                        </div>
+                        <div *ngIf="submitted && registrationForm.get('postalCode').errors">
+                                <div *ngIf="registrationForm.get('postalCode').errors?.required">
+                                        <span style="color:red">{{postalCodeReqDes}}</span>
+                                </div>
+                        </div>
+                        
+                        </div>  
+                    </div>
+                  <div class="panel-footer">
+                      <button id="regBtn" class="btn btn-primary" type="submit">Register</button>
+                  </div>
+          </div>
+  </div>  
+</form>  
+
